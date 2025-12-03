@@ -1,5 +1,5 @@
-create database juegos;
-use juegos;
+
+use a231190068;
 
 create table t_juegos (id_juego int auto_increment, 
 	nombre varchar(150), 
@@ -12,7 +12,7 @@ ALTER TABLE t_juegos CONVERT TO CHARACTER SET utf8;
 DROP procedure IF EXISTS `sp_mostrar_datos`;
 
 DELIMITER $$
-USE `juegos`$$
+USE `a231190068`$$
 CREATE PROCEDURE `sp_mostrar_datos` ()
 BEGIN
 	select id_juego,
@@ -28,7 +28,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_insertar_datos`;
 
 DELIMITER $$
-USE `juegos`$$
+USE `a231190068`$$
 CREATE PROCEDURE `sp_insertar_datos` (in nombreI varchar(50),
 										in anioI varchar(50),
                                         in empresaI varchar(50))
@@ -45,7 +45,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_actualizar_datos`;
 
 DELIMITER $$
-USE `juegos`$$
+USE `a231190068`$$
 CREATE PROCEDURE `sp_actualizar_datos` (in nombreU varchar(50),
 										in anioU varchar(50),
                                         in empresaU varchar(50),
@@ -63,7 +63,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_eliminar_datos`;
 
 DELIMITER $$
-USE `juegos`$$
+USE `a231190068`$$
 CREATE PROCEDURE `sp_eliminar_datos`(in idJuegoD int )
 BEGIN
 	delete	from t_juegos 
@@ -76,7 +76,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_obtener_regJuego`;
 
 DELIMITER $$
-USE `juegos`$$
+USE `a231190068`$$
 CREATE PROCEDURE `sp_obtener_regJuego` (in idJuegoO int)
 BEGIN
 	SELECT * FROM t_juegos where id_juego=idJuegoO;
